@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Wilkinson | AI & Robotics Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-forest: #2d4a3e;
+            --color-pine: #3d5a4c;
+            --color-sage: #7a9e8e;
+            --color-mist: #b8c9be;
+            --color-snow: #f5f7f5;
+            --color-stone: #4a4a4a;
+            --color-warm-white: #fafaf8;
+            --color-accent: #8b7355;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: var(--color-stone);
+            background-color: var(--color-warm-white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 248, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--color-mist);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-forest);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-stone);
+            font-weight: 400;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-forest);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--color-stone);
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--color-forest);
+        }
+
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            width: 100vw;
+            max-width: 100vw;
+            margin: 0;
+            margin-left: 0;
+            padding: 6rem 2rem 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/hero-bg.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg,
+                rgba(250, 250, 248, 0.2) 0%,
+                rgba(250, 250, 248, 0.6) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--color-forest);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .hero .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--color-stone);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero .tagline .typing-text {
+            color: var(--color-forest);
+            font-weight: 600;
+        }
+
+        .hero .tagline .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: var(--color-forest);
+            margin-left: 2px;
+            animation: blink 1s infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .hero .intro {
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            color: var(--color-stone);
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background-color: var(--color-forest);
+            color: var(--color-snow);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: var(--color-pine);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--color-forest);
+            color: var(--color-forest);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-forest);
+            color: var(--color-snow);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--color-forest);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--color-sage);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--color-sage);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* About Section */
+        .about {
+            background-color: var(--color-snow);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(45, 74, 62, 0.15);
+        }
+
+        /* Education */
+        .education-list {
+            margin-top: 2rem;
+        }
+
+        .edu-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--color-sage);
+        }
+
+        .edu-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-forest);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .edu-item .degree {
+            color: var(--color-stone);
+            font-size: 0.95rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(45, 74, 62, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(45, 74, 62, 0.12);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-mist), var(--color-sage));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-forest);
+            font-size: 0.85rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-forest);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .project-content p {
+            color: var(--color-stone);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--color-snow);
+            color: var(--color-pine);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: var(--color-snow);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(45, 74, 62, 0.06);
+        }
+
+        .skill-category h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-forest);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-category p {
+            color: var(--color-stone);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(180deg, var(--color-warm-white) 0%, var(--color-snow) 100%);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-email {
+            font-size: 1.5rem;
+            color: var(--color-forest);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-email:hover {
+            color: var(--color-pine);
+        }
+
+        .contact-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-social a {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-forest);
+            box-shadow: 0 2px 10px rgba(45, 74, 62, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-social a:hover {
+            background: var(--color-forest);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-social svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-forest);
+            color: var(--color-mist);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--color-mist);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+
+            .hero .intro {
+                font-size: 1rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .btn-outline {
+                margin-left: 0;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">Grant</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="https://github.com/grant-wilki" target="_blank" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/grant-wilkinson/" target="_blank" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Grant Wilkinson</h1>
+            <p class="tagline">I'm a <span class="typing-text" id="typing-text"></span><span class="cursor"></span></p>
+            <p class="intro">
+                Building intelligent systems at the intersection of computer vision, machine learning, 
+                and physical deployment. Applying AI to make the world more sustainable. 
+            </p>
+            <div>
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Background & Education</p>
+                <p>
+                    I'm a multidisciplinary engineer and strategist focused on the intersection of AI,  
+                    product development, and real-world systems. My goal is to design and build solutions
+                    that make the world a better and more sustainable place.
+                </p>
+                <p>
+                    I'm a graduate student at Carnegie Mellon studying AI Engineering. Before CMU, I spent 
+                    four years at Deloitte Consulting working at the intersection of energy and sustainability
+                    strategy, where I led AI product development for wildfire prevention solutions and launched 
+                    a generative AI tool to 200,000+ users.
+                </p>
+
+                <div class="education-list">
+                    <div class="edu-item">
+                        <h4>Carnegie Mellon University</h4>
+                        <p class="degree">M.S. in AI Engineering - Mechanical Engineering</p>
+                    </div>
+                    <div class="edu-item">
+                        <h4>Rice University</h4>
+                        <p class="degree">B.S. in Mechanical Engineering</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="images/profile.jpeg" alt="Grant Wilkinson">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Current research & development</p>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-image">Computer Vision Pipeline</div>
+                <div class="project-content">
+                    <h3>Autonomous Precision Vegetation Management</h3>
+                    <p>
+                        End-to-end AI computer vision pipeline using YOLO and PyTorch to detect and classify
+                        invasive plant species in complex terrains with real-time inference. Engineered a
+                        geospatial mapping system integrating GPS metadata with visual detection to generate
+                        treatment maps for autonomous robotic platforms.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">YOLO</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">GPS/Geospatial</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image">Edge AI System</div>
+                <div class="project-content">
+                    <h3>Edge AI Real-Time Scenic Recognition</h3>
+                    <p>
+                        Real-time landscape identification system for edge devices to automate "memory"
+                        collection with wearable integration. Comparing model architectures (CNNs, VLMs,
+                        and ensembles) to analyze inference latency, power consumption, and accuracy tradeoffs.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Edge AI</span>
+                        <span class="tag">CNNs</span>
+                        <span class="tag">VLMs</span>
+                        <span class="tag">Wearables</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image">Project Screenshot</div>
+                <div class="project-content">
+                    <h3>Project Title</h3>
+                    <p>
+                        Brief description of the project, the problem it solves, and the technologies used.
+                        Add details about your role and the impact of the work.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Technology</span>
+                        <span class="tag">Framework</span>
+                        <span class="tag">Tool</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image">Project Screenshot</div>
+                <div class="project-content">
+                    <h3>Project Title</h3>
+                    <p>
+                        Brief description of the project, the problem it solves, and the technologies used.
+                        Add details about your role and the impact of the work.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Technology</span>
+                        <span class="tag">Framework</span>
+                        <span class="tag">Tool</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image">Project Screenshot</div>
+                <div class="project-content">
+                    <h3>Project Title</h3>
+                    <p>
+                        Brief description of the project, the problem it solves, and the technologies used.
+                        Add details about your role and the impact of the work.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Technology</span>
+                        <span class="tag">Framework</span>
+                        <span class="tag">Tool</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">Technical expertise</p>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Programming</h4>
+                <p>Python (PyTorch, Sklearn, OpenCV, Spark, TensorFlow, JAX, CUDA), SQL, MATLAB, R, GitHub</p>
+            </div>
+            <div class="skill-category">
+                <h4>AI/ML & Analytics</h4>
+                <p>Machine Learning, Computer Vision (LiDAR, Photogrammetry, YOLO), Geospatial Analytics, AI & Data Strategy, Statistical Analysis</p>
+            </div>
+            <div class="skill-category">
+                <h4>Business & Product</h4>
+                <p>Product Management, Financial Modeling, Engineering Communication, Customer Interviews, Requirement Generation</p>
+            </div>
+            <div class="skill-category">
+                <h4>Tools & Platforms</h4>
+                <p>GIS Software (ArcGIS, QGIS), Tableau, Power BI, Microsoft Office Suite</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's connect</p>
+            <p>
+                Currently bridging the gap between AI research and product reality at Carnegie Mellon. 
+                If you're building something that needs to move, think, or scale—let's talk.
+            </p>
+            <a href="mailto:grantmwilkinson@gmail.com" class="contact-email">grantmwilkinson@gmail.com</a>
+
+            <div class="contact-social">
+                <a href="https://github.com/grant-wilki" target="_blank" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/grant-wilkinson/" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Grant Wilkinson</p>
+    </footer>
+
+    <!-- Typing Animation Script -->
+    <script>
+        const titles = ['Machine Learning Engineer', 'Product Builder', 'Strategist', 'Founder', 'Robotics Engineer', 'Problem Solver'];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function type() {
+            const currentTitle = titles[titleIndex];
+
+            if (isDeleting) {
+                typingElement.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 70;
+
+            if (!isDeleting && charIndex === currentTitle.length) {
+                typeSpeed = 1500; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titles.length;
+                typeSpeed = 300; // Pause before next word
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start typing animation
+        document.addEventListener('DOMContentLoaded', type);
+    </script>
+</body>
+</html>
