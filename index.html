@@ -316,9 +316,8 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            justify-content: center;
         }
 
         .project-card {
@@ -609,7 +608,7 @@
                 </div>
             </div>
             <div class="about-image">
-                <img src="images/profile.jpeg" alt="Grant Wilkinson">
+                <img src="images/grant-boat.jpeg" alt="Grant Wilkinson">
             </div>
         </div>
     </section>
@@ -621,7 +620,7 @@
 
         <div class="projects-grid">
             <article class="project-card">
-                <div class="project-image">Computer Vision Pipeline</div>
+                <div class="project-image"><img src="images/weed-ID-visual.png" alt="Autonomous Precision Vegetation Management" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="project-content">
                     <h3>Autonomous Precision Vegetation Management</h3>
                     <p>
@@ -640,7 +639,7 @@
             </article>
 
             <article class="project-card">
-                <div class="project-image">Edge AI System</div>
+                <div class="project-image"><img src="images/scenic-or-not.jpeg" alt="Edge AI Real-Time Scenic Recognition" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="project-content">
                     <h3>Edge AI Real-Time Scenic Recognition</h3>
                     <p>
@@ -658,49 +657,82 @@
             </article>
 
             <article class="project-card">
-                <div class="project-image">Project Screenshot</div>
+                <div class="project-image"><img src="images/Veg-Inspections.png" alt="AI-Powered Vegetation Risk Management" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="project-content">
-                    <h3>Project Title</h3>
+                    <h3>AI-Powered Vegetation Risk Management</h3>
                     <p>
-                        Brief description of the project, the problem it solves, and the technologies used.
-                        Add details about your role and the impact of the work.
+                        Led product development at Deloitte for a large US utility to automate the inspection
+                        of thousands of miles of power infrastructure using drones, LiDAR, and machine learning.
+                        The system detects at-risk vegetation encroachments near high-voltage lines — the single
+                        largest cause of service outages per FERC — replacing costly on-foot inspections with
+                        scalable aerial remote sensing. Integrated GIS data layers, Salesforce Field Service Cloud,
+                        and ML image processing into a unified platform for real-time reporting and work order management.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Technology</span>
-                        <span class="tag">Framework</span>
-                        <span class="tag">Tool</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Drone / UAS</span>
+                        <span class="tag">LiDAR</span>
+                        <span class="tag">GIS / Geospatial</span>
+                        <span class="tag">Salesforce</span>
                     </div>
                 </div>
             </article>
 
             <article class="project-card">
-                <div class="project-image">Project Screenshot</div>
+                <div class="project-image"><img src="images/power-plants-visual.png" alt="US Power Plants & Facility GHG Emissions" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="project-content">
-                    <h3>Project Title</h3>
+                    <h3>US Power Plants & Facility GHG Emissions</h3>
                     <p>
-                        Brief description of the project, the problem it solves, and the technologies used.
-                        Add details about your role and the impact of the work.
+                        Built interactive Tableau visualizations mapping the full US energy infrastructure —
+                        spanning power plants by energy source and total capacity, alongside facility-level
+                        GHG emissions inventories. A refined version of this work was delivered to state
+                        leadership to help policymakers understand and decarbonize the energy systems they oversee.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Technology</span>
-                        <span class="tag">Framework</span>
-                        <span class="tag">Tool</span>
+                        <span class="tag">Tableau</span>
+                        <span class="tag">Geospatial Analytics</span>
+                        <span class="tag">Energy Policy</span>
+                        <span class="tag">GHG / Emissions</span>
                     </div>
                 </div>
             </article>
 
             <article class="project-card">
-                <div class="project-image">Project Screenshot</div>
+                <div class="project-image"><img src="images/inline-solid-liquid-mixing.png" alt="Inline Solid-Liquid Mixing Device" style="width:100%;height:100%;object-fit:cover;"></div>
                 <div class="project-content">
-                    <h3>Project Title</h3>
+                    <h3>Inline Solid-Liquid Mixing Device</h3>
                     <p>
-                        Brief description of the project, the problem it solves, and the technologies used.
-                        Add details about your role and the impact of the work.
+                        Two-semester capstone project at Rice University to design and prototype an inline device
+                        capable of continuously mixing one solid and two liquids for large-scale chemical production.
+                        The system integrates an auger-fed hopper, swirl basin, pumps, and real-time sensors for
+                        salinity, flow, and density — all controlled via a Raspberry Pi with touchscreen interface
+                        for user input and QC reporting.
                     </p>
                     <div class="project-tags">
-                        <span class="tag">Technology</span>
-                        <span class="tag">Framework</span>
-                        <span class="tag">Tool</span>
+                        <span class="tag">CAD / SolidWorks</span>
+                        <span class="tag">Electrical Design</span>
+                        <span class="tag">Sensors & Control</span>
+                        <span class="tag">Raspberry Pi</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image"><img src="images/gearbox-design.png" alt="Mechanical Design: 80:1 Gearbox Assembly" style="width:100%;height:100%;object-fit:cover;"></div>
+                <div class="project-content">
+                    <h3>Mechanical Design: 80:1 Gearbox Assembly</h3>
+                    <p>
+                        Designed a compact gearbox achieving an 80:1 speed reduction with input/output shafts
+                        at 90° and 12,000 lb-in output torque. Optimized the geartrain for minimum volume using
+                        four spur gear pairs and one bevel gear set across six shafts. Performed full fatigue
+                        and stress analyses for shaft and bearing selection, achieving safety factors of 2.1:1
+                        (first cycle) and 1.55:1 (infinite life). Received a perfect score of 225/225.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">CAD / SolidWorks</span>
+                        <span class="tag">Fatigue Analysis</span>
+                        <span class="tag">Gear Train Design</span>
+                        <span class="tag">FEA</span>
                     </div>
                 </div>
             </article>
