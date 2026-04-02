@@ -266,6 +266,14 @@
         /* About Section */
         .about {
             background-color: var(--color-snow);
+            max-width: 100%;
+            padding: 6rem 0;
+        }
+
+        .about-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .about-content {
@@ -311,6 +319,98 @@
         .edu-item .degree {
             color: var(--color-stone);
             font-size: 0.95rem;
+        }
+
+        /* Work Experience Section */
+        .work-experience {
+            background: linear-gradient(160deg, #f4f1eb 0%, #f0ece5 100%);
+            max-width: 100%;
+            padding: 6rem 0;
+        }
+
+        .work-experience-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .work-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .work-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(45, 74, 62, 0.07);
+            overflow: hidden;
+        }
+
+        .work-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            user-select: none;
+        }
+
+        .work-item-header:hover {
+            background: rgba(139, 115, 85, 0.04);
+        }
+
+        .work-item-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .work-item-meta h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            color: var(--color-forest);
+            font-weight: 600;
+        }
+
+        .work-item-meta .work-role-dates {
+            font-size: 0.9rem;
+            color: var(--color-sage);
+            font-weight: 400;
+        }
+
+        .work-item-toggle {
+            width: 20px;
+            height: 20px;
+            color: var(--color-sage);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .work-item.open .work-item-toggle {
+            transform: rotate(180deg);
+        }
+
+        .work-item-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            padding: 0 1.5rem;
+        }
+
+        .work-item.open .work-item-body {
+            max-height: 600px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .work-item-body p {
+            font-size: 0.97rem;
+            color: var(--color-stone);
+            line-height: 1.75;
+            border-top: 1px solid var(--color-mist);
+            padding-top: 1rem;
         }
 
         /* Projects Section */
@@ -379,6 +479,14 @@
         /* Skills Section */
         .skills {
             background-color: var(--color-snow);
+            max-width: 100%;
+            padding: 6rem 0;
+        }
+
+        .skills-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .skills-grid {
@@ -544,6 +652,7 @@
         <a href="#" class="logo">Grant</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -580,6 +689,7 @@
 
     <!-- About Section -->
     <section id="about" class="about">
+        <div class="about-inner">
         <div class="about-content">
             <div class="about-text">
                 <h2 class="section-title">About Me</h2>
@@ -610,6 +720,100 @@
             <div class="about-image">
                 <img src="images/grant-boat.jpeg" alt="Grant Wilkinson">
             </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="work-experience">
+        <div class="work-experience-inner">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">Professional history</p>
+
+        <div class="work-accordion">
+
+            <!-- Hermes Vision -->
+            <div class="work-item open">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>Hermes Vision</h3>
+                        <span class="work-role-dates">Founder & CEO &nbsp;·&nbsp; Nov 2025 – Present</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Building an AI-powered computer vision platform for precision vegetation management in the energy and utility sector. Selected for the CMU Robotics Factory Accelerate program, placed 2nd at the CMU McGinnis Venture Competition, and named a Top 50 Planet-First Innovation by the Sustainable Innovation Council.</p>
+                </div>
+            </div>
+
+            <!-- Deloitte -->
+            <div class="work-item">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>Deloitte Consulting | Strategy & Analytics</h3>
+                        <span class="work-role-dates">Strategy Analyst → Consultant → Senior Consultant &nbsp;·&nbsp; Jan 2021 – Jun 2025</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Spent four years at Deloitte working across AI, energy, and sustainability strategy. Led the development of a wildfire risk AI/ML solution for a major California utility as product manager, rolled out a generative AI tool to 180,000+ users within a week of launch, and advanced Deloitte's Earth Observation practice by integrating drone imagery, LiDAR, and machine learning for 5+ energy and utility clients. Earlier work included building an ML pipeline corrosion risk model for 77k miles of gas pipelines and delivering Tableau-based emissions analytics to state leadership to shape clean energy roadmaps.</p>
+                </div>
+            </div>
+
+            <!-- Trey Deuce Designs -->
+            <div class="work-item">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>Trey Deuce Designs LLC</h3>
+                        <span class="work-role-dates">Founder &nbsp;·&nbsp; Jul 2020 – May 2022</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Founded and operated a custom woodworking business during the pandemic, designing and handcrafting hardwood furniture and home goods for the consumer market. Managed all aspects of the business — product design, material sourcing, LLC incorporation, and online presence — as sole proprietor.</p>
+                </div>
+            </div>
+
+            <!-- Lockheed Martin -->
+            <div class="work-item">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>Lockheed Martin | Missiles and Fire Control</h3>
+                        <span class="work-role-dates">Systems Engineering Intern &nbsp;·&nbsp; May 2019 – Aug 2019</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Collaborated on a multidisciplinary team to develop a new rocket artillery Fire Control System, leading requirements development and Integration & Test planning. Redeveloped a guided artillery missile's control fin actuation system model, ran Monte Carlo simulations, and performed optimization to select ideal control parameters across the flight envelope.</p>
+                </div>
+            </div>
+
+
+            <!-- ValvTechnologies -->
+            <div class="work-item">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>ValvTechnologies Inc.</h3>
+                        <span class="work-role-dates">Product Engineering Intern &nbsp;·&nbsp; May 2018 – Aug 2018</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Led a five-person team to design a $350,000 offshore oil-and-gas valve, performing size and stress analyses and developing CAD models for fabrication. Developed a structured torque testing process to meet nuclear regulatory requirements and coordinated a LEAN manufacturing 5S event to improve machine shop efficiency.</p>
+                </div>
+            </div>
+
+        </div>
         </div>
     </section>
 
@@ -740,6 +944,7 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills">
+        <div class="skills-inner">
         <h2 class="section-title">Skills</h2>
         <p class="section-subtitle">Technical expertise</p>
 
@@ -760,6 +965,7 @@
                 <h4>Tools & Platforms</h4>
                 <p>GIS Software (ArcGIS, QGIS), Tableau, Power BI, Microsoft Office Suite</p>
             </div>
+        </div>
         </div>
     </section>
 
@@ -828,6 +1034,13 @@
 
         // Start typing animation
         document.addEventListener('DOMContentLoaded', type);
+
+        // Accordion toggle
+        document.querySelectorAll('.work-item-header').forEach(header => {
+            header.addEventListener('click', () => {
+                header.parentElement.classList.toggle('open');
+            });
+        });
     </script>
 </body>
 </html>
