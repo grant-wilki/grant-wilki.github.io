@@ -195,9 +195,41 @@
         .hero .intro {
             font-size: 1.15rem;
             max-width: 600px;
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 2rem;
             color: var(--color-stone);
             line-height: 1.8;
+        }
+
+        /* Core Skills Strip */
+        .hero-skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 0 auto 2.5rem;
+            max-width: 700px;
+        }
+
+        .hero-skill-pill {
+            background: rgba(45, 74, 62, 0.1);
+            border: 1px solid rgba(45, 74, 62, 0.25);
+            color: var(--color-forest);
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-skills {
+                gap: 0.5rem;
+            }
+            .hero-skill-pill {
+                font-size: 0.8rem;
+                padding: 0.3rem 0.8rem;
+            }
         }
 
         .btn {
@@ -458,9 +490,14 @@
         .project-content p {
             color: var(--color-stone);
             font-size: 0.95rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
             line-height: 1.6;
         }
+
+        .project-content p:last-of-type {
+            margin-bottom: 1rem;
+        }
+
 
         .project-tags {
             display: flex;
@@ -675,14 +712,23 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Grant Wilkinson</h1>
-            <p class="tagline">I'm a <span class="typing-text" id="typing-text"></span><span class="cursor"></span></p>
+            <p class="tagline">I'm a <span class="typing-text" id="typing-text">AI &amp; Robotics Engineer</span><span class="cursor"></span></p>
             <p class="intro">
-                Building intelligent systems at the intersection of computer vision, automation, 
-                and physical deployment. Applying AI to solve real challenges and make the world more sustainable. 
+                Building intelligent systems at the intersection of computer vision, automation,
+                and physical deployment. Applying AI to solve real challenges and make the world more sustainable.
             </p>
+            <div class="hero-skills" aria-label="Core skills">
+                <span class="hero-skill-pill">Computer Vision</span>
+                <span class="hero-skill-pill">Remote Sensing &amp; Geospatial AI</span>
+                <span class="hero-skill-pill">UAS / Drone Systems</span>
+                <span class="hero-skill-pill">AI Strategy</span>
+                <span class="hero-skill-pill">Product Management</span>
+                <span class="hero-skill-pill">Business Development</span>
+            </div>
             <div>
                 <a href="#projects" class="btn">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                <a href="resume.pdf" class="btn btn-outline" download>Download Resume</a>
             </div>
         </div>
     </section>
@@ -703,17 +749,17 @@
                     I'm a graduate student at Carnegie Mellon studying AI Engineering. Before CMU, I spent 
                     four years at Deloitte Consulting working at the intersection of energy and sustainability
                     strategy, where I led AI product development for wildfire prevention solutions and launched 
-                    a generative AI tool to 200,000+ users.
+                    a generative AI tool to 180,000+ users.
                 </p>
 
                 <div class="education-list">
                     <div class="edu-item">
                         <h4>Carnegie Mellon University</h4>
-                        <p class="degree">M.S. in AI Engineering - Mechanical Engineering</p>
+                        <p class="degree">M.S. in AI Engineering - Mechanical Engineering &nbsp;·&nbsp; Expected Dec 2026</p>
                     </div>
                     <div class="edu-item">
                         <h4>Rice University</h4>
-                        <p class="degree">B.S. in Mechanical Engineering</p>
+                        <p class="degree">B.S. in Mechanical Engineering &nbsp;·&nbsp; May 2020</p>
                     </div>
                 </div>
             </div>
@@ -828,10 +874,16 @@
                 <div class="project-content">
                     <h3>Autonomous Precision Vegetation Management</h3>
                     <p>
-                        End-to-end AI computer vision pipeline using YOLO and PyTorch to detect and classify
-                        invasive plant species in complex terrains with real-time inference. Engineered a
-                        geospatial mapping system integrating GPS metadata with visual detection to generate
-                        treatment maps for autonomous robotic platforms.
+                        Conventional invasive vegetation control relies on broadcast herbicide application, saturating entire fields regardless of where target species actually grow. This project set out to replace that indiscriminate approach with an autonomous computer vision system capable of detecting and precisely locating invasive species in the field.
+                    </p>
+                    <p>
+                        Built an end-to-end perception pipeline using YOLO and PyTorch that performs real-time species detection and classification from drone imagery in complex, multi-species terrain. A geospatial mapping layer fuses GPS metadata with each detection to produce georeferenced treatment maps, enabling downstream autonomous robotic platforms to apply herbicide only where target species are confirmed present.
+                    </p>
+                    <p>
+                        The system exceeded 85% detection accuracy across test conditions. Treatment maps generated from detections demonstrate a capability to reduce pesticide volume by up to 70% compared to broadcast application baselines.
+                    </p>
+                    <p>
+                        The prototype is advancing toward a field pilot, with the core detection-to-treatment-map pipeline validated. Precision application at this accuracy level offers a path to meaningfully lower chemical inputs across large-acreage land management — with direct implications for soil health, regulatory compliance, and operational cost.
                     </p>
                     <div class="project-tags">
                         <span class="tag">PyTorch</span>
@@ -847,14 +899,23 @@
                 <div class="project-content">
                     <h3>Edge AI Real-Time Scenic Recognition</h3>
                     <p>
-                        Real-time landscape identification system for edge devices to automate "memory"
-                        collection with wearable integration. Comparing model architectures (CNNs, VLMs,
-                        and ensembles) to analyze inference latency, power consumption, and accuracy tradeoffs.
+                        Wearable devices capture everything but remember nothing — users still manually curate which moments are worth keeping. This project aimed to automate scenic quality recognition on edge hardware, enabling wearables to independently identify and save visually compelling moments in real time.
+                    </p>
+                    <p>
+                        Benchmarked four model architectures — DINO, MobileNet, NIMA, and MaskFormer — across inference latency, power consumption, and classification accuracy to identify the optimal tradeoff profile for constrained edge deployment.
+                    </p>
+                    <p>
+                        The system correctly identified 10 out of 10 highest-quality images from a 300-image evaluation dataset. The project was awarded Best Overall Project at the 2026 CMU MechE Design Expo.
+                    </p>
+                    <p>
+                        Results indicate that lightweight architectures can achieve high scenic classification accuracy at inference speeds viable for wearable deployment, with NIMA's aesthetic scoring approach offering the strongest accuracy-to-compute tradeoff.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Edge AI</span>
-                        <span class="tag">CNNs</span>
-                        <span class="tag">VLMs</span>
+                        <span class="tag">DINO</span>
+                        <span class="tag">MobileNet</span>
+                        <span class="tag">NIMA</span>
+                        <span class="tag">MaskFormer</span>
                         <span class="tag">Wearables</span>
                     </div>
                 </div>
@@ -865,12 +926,16 @@
                 <div class="project-content">
                     <h3>AI-Powered Vegetation Risk Management</h3>
                     <p>
-                        Led product development for a large US utility to automate the inspection
-                        of thousands of miles of power infrastructure using drones, LiDAR, and machine learning.
-                        The system detects at-risk vegetation encroachments near high-voltage lines — the single
-                        largest cause of service outages per FERC — replacing costly on-foot inspections with
-                        scalable aerial remote sensing. Integrated GIS data layers, field service software,
-                        and AI pipelines into a unified platform for real-time reporting and work order management.
+                        Vegetation encroachment near high-voltage lines is the single largest cause of utility outages in the US. A major California utility operating more than 50,000 miles of transmission and distribution infrastructure needed a scalable alternative to on-foot inspection — which is slow, expensive, and provides infrequent coverage across a network that size.
+                    </p>
+                    <p>
+                        Serving as product strategist, led the operationalization of an AI inspection platform — translating field crew requirements into system capabilities and ensuring the product was deployable in real operational conditions. The platform fuses drone imagery, LiDAR point clouds, and machine learning to detect at-risk vegetation, integrating GIS data layers, field service software, and AI pipelines into a unified reporting and work order system.
+                    </p>
+                    <p>
+                        The system achieved vegetation detection accuracy to within 6 inches in both absolute and relative terms, enabling lower cost-per-mile inspections and more frequent corridor coverage than on-foot baseline methods allowed.
+                    </p>
+                    <p>
+                        At 50,000+ miles of infrastructure, the gap between on-foot and aerial AI inspection compounds quickly — this platform demonstrated that perception-based remote sensing can close that gap operationally, not just technically.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Computer Vision</span>
@@ -886,10 +951,16 @@
                 <div class="project-content">
                     <h3>US Power Plants & Facility GHG Emissions</h3>
                     <p>
-                        Built interactive Tableau visualizations mapping the full US energy infrastructure —
-                        spanning power plants by energy source and total capacity, alongside facility-level
-                        GHG emissions inventories. A refined version of this work was delivered to state
-                        leadership to help policymakers understand and decarbonize the energy systems they oversee.
+                        State energy policymakers face a core visibility problem: the data needed to plan decarbonization exists across multiple federal datasets but is never integrated in a form that supports decision-making. This project set out to bridge that gap by building an interactive, unified view of US power infrastructure and emissions through 2050.
+                    </p>
+                    <p>
+                        Constructed interactive Tableau dashboards drawing from EIA capacity data, EPA FLIGHT facility emissions records, and EPA GHG estimates — covering all greenhouse gases and projected trajectories through 2050. Visualizations map US power plants by energy source and installed capacity alongside facility-level GHG inventories, enabling cross-sector comparison at national and regional scales.
+                    </p>
+                    <p>
+                        A refined version of the analysis was delivered to a state energy office and used directly as input for decarbonization roadmap development and clean energy policy planning.
+                    </p>
+                    <p>
+                        Integrating generation capacity with emissions projections in a single visual layer made it possible for non-technical policymakers to identify high-emission facilities and model clean energy transition pathways — a workflow that historically required separate analyst handoffs.
                     </p>
                     <div class="project-tags">
                         <span class="tag">Tableau</span>
@@ -905,11 +976,16 @@
                 <div class="project-content">
                     <h3>Inline Solid-Liquid Mixing Device</h3>
                     <p>
-                        Two-semester capstone project at Rice University to design and prototype an inline device
-                        capable of continuously mixing one solid and two liquids for large-scale chemical production.
-                        The system integrates an auger-fed hopper, swirl basin, pumps, and real-time sensors for
-                        salinity, flow, and density — all controlled via a Raspberry Pi with touchscreen interface
-                        for user input and QC reporting.
+                        Large-scale chemical production requires precise, continuous mixing of solids and liquids — a process that batch methods handle inefficiently, creating throughput bottlenecks at industrial scale. Baker Hughes commissioned this two-semester capstone project at Rice University to design and prototype an inline device capable of continuously combining one solid and two liquids in a single pass.
+                    </p>
+                    <p>
+                        Working as part of a 4-person team, designed a system integrating an auger-fed solid hopper, swirl-basin mixing chamber, dual pumps, and real-time sensors monitoring salinity, flow rate, and fluid density. A Raspberry Pi with touchscreen interface provided operator control and live QC reporting throughout the mixing process.
+                    </p>
+                    <p>
+                        The prototype achieved uniform mixing under test conditions, validating the inline approach for continuous solid-liquid combination. Full production-scale testing was curtailed by Covid-19 before the project could be completed.
+                    </p>
+                    <p>
+                        The sensor-integrated control architecture demonstrated that real-time quality monitoring is feasible within a compact inline form factor — a design pattern directly applicable to automated industrial process equipment.
                     </p>
                     <div class="project-tags">
                         <span class="tag">CAD / SolidWorks</span>
@@ -925,11 +1001,16 @@
                 <div class="project-content">
                     <h3>Mechanical Design: 80:1 Gearbox Assembly</h3>
                     <p>
-                        Designed a compact gearbox achieving an 80:1 speed reduction with input/output shafts
-                        at 90° and 12,000 lb-in output torque. Optimized the geartrain for minimum volume using
-                        four spur gear pairs and one bevel gear set across six shafts. Performed full fatigue
-                        and stress analyses for shaft and bearing selection, achieving safety factors of 2.1:1
-                        (first cycle) and 1.55:1 (infinite life).
+                        High-torque gearboxes require simultaneous optimization across geometry, material selection, and fatigue life — constraints that pull in competing directions and leave little margin for error. This undergraduate mechanical design project challenged a 3-person team to design an 80:1 speed-reduction gearbox delivering 12,000 lb-in of output torque with input and output shafts oriented at 90°.
+                    </p>
+                    <p>
+                        Optimized a geartrain for minimum volume using four spur gear pairs and one bevel gear set distributed across six shafts. Performed full analytical fatigue and stress analyses in SolidWorks to select shaft dimensions and bearings at each stage, working entirely in CAD without physical fabrication.
+                    </p>
+                    <p>
+                        The final design met all specified requirements: a 2.1:1 safety factor against first-cycle failure (minimum 2:1) and 1.55:1 against infinite fatigue life (minimum 1.5:1), confirming structural adequacy within the target volume envelope.
+                    </p>
+                    <p>
+                        Systematic analytical design proved sufficient to satisfy tight multi-constraint specs without physical iteration — a workflow directly applicable to precision power transmission in robotics and industrial actuator systems.
                     </p>
                     <div class="project-tags">
                         <span class="tag">CAD / SolidWorks</span>
@@ -978,6 +1059,9 @@
                 If you're building something that needs to move, think, or scale—let's talk.
             </p>
             <a href="mailto:grantmwilkinson@gmail.com" class="contact-email">grantmwilkinson@gmail.com</a>
+            <div style="margin-top: 1.5rem;">
+                <a href="resume.pdf" class="btn" download>Download Resume</a>
+            </div>
 
             <div class="contact-social">
                 <a href="https://github.com/grant-wilki" target="_blank" aria-label="GitHub">
@@ -996,12 +1080,12 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Grant Wilkinson</p>
+        <p>&copy; 2026 Grant Wilkinson</p>
     </footer>
 
     <!-- Typing Animation Script -->
     <script>
-        const titles = ['Machine Learning Engineer', 'Product Builder', 'Strategist', 'Founder', 'Robotics Engineer', 'Problem Solver'];
+        const titles = ['Machine Learning Engineer', 'Computer Vision Engineer', 'Product Builder', 'Strategist', 'Founder', 'Robotics Engineer', 'Problem Solver'];
         let titleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
@@ -1032,8 +1116,11 @@
             setTimeout(type, typeSpeed);
         }
 
-        // Start typing animation
-        document.addEventListener('DOMContentLoaded', type);
+        // Start typing animation; clear static fallback before first keystroke
+        document.addEventListener('DOMContentLoaded', () => {
+            typingElement.textContent = '';
+            type();
+        });
 
         // Accordion toggle
         document.querySelectorAll('.work-item-header').forEach(header => {
