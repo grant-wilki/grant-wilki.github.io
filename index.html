@@ -195,41 +195,9 @@
         .hero .intro {
             font-size: 1.15rem;
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
             color: var(--color-stone);
             line-height: 1.8;
-        }
-
-        /* Core Skills Strip */
-        .hero-skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.6rem;
-            margin: 0 auto 2.5rem;
-            max-width: 700px;
-        }
-
-        .hero-skill-pill {
-            background: rgba(45, 74, 62, 0.1);
-            border: 1px solid rgba(45, 74, 62, 0.25);
-            color: var(--color-forest);
-            padding: 0.35rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-
-        @media (max-width: 768px) {
-            .hero-skills {
-                gap: 0.5rem;
-            }
-            .hero-skill-pill {
-                font-size: 0.8rem;
-                padding: 0.3rem 0.8rem;
-            }
         }
 
         .btn {
@@ -353,6 +321,215 @@
             font-size: 0.95rem;
         }
 
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(45, 74, 62, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(45, 74, 62, 0.12);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--color-mist), var(--color-sage));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-forest);
+            font-size: 0.85rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-forest);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .project-content p {
+            color: var(--color-stone);
+            font-size: 0.95rem;
+            margin-bottom: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .project-details {
+            display: none;
+        }
+
+        .project-read-more {
+            display: inline-block;
+            color: var(--color-forest);
+            font-size: 0.875rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            margin-top: 0.25rem;
+        }
+
+        .project-card:hover .project-read-more {
+            text-decoration: underline;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--color-snow);
+            color: var(--color-pine);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Project Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(45, 74, 62, 0.55);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: white;
+            border-radius: 10px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(45, 74, 62, 0.25);
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+            display: block;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-title {
+            color: var(--color-forest);
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .modal-text p {
+            color: var(--color-stone);
+            font-size: 0.97rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--color-forest);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            line-height: 1;
+            z-index: 10;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--color-forest);
+            color: white;
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: var(--color-snow);
+            max-width: 100%;
+            padding: 6rem 0;
+        }
+
+        .skills-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(45, 74, 62, 0.06);
+        }
+
+        .skill-category h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-forest);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-category p {
+            color: var(--color-stone);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
         /* Work Experience Section */
         .work-experience {
             background: linear-gradient(160deg, #f4f1eb 0%, #f0ece5 100%);
@@ -443,117 +620,6 @@
             line-height: 1.75;
             border-top: 1px solid var(--color-mist);
             padding-top: 1rem;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(45, 74, 62, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(45, 74, 62, 0.12);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--color-mist), var(--color-sage));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--color-forest);
-            font-size: 0.85rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--color-forest);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .project-content p {
-            color: var(--color-stone);
-            font-size: 0.95rem;
-            margin-bottom: 0.85rem;
-            line-height: 1.6;
-        }
-
-        .project-content p:last-of-type {
-            margin-bottom: 1rem;
-        }
-
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background: var(--color-snow);
-            color: var(--color-pine);
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        /* Skills Section */
-        .skills {
-            background-color: var(--color-snow);
-            max-width: 100%;
-            padding: 6rem 0;
-        }
-
-        .skills-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
-            gap: 2rem;
-            margin-top: 2rem;
-            justify-content: center;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(45, 74, 62, 0.06);
-        }
-
-        .skill-category h4 {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--color-forest);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .skill-category p {
-            color: var(--color-stone);
-            font-size: 0.95rem;
-            line-height: 1.7;
         }
 
         /* Contact Section */
@@ -680,6 +746,18 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .modal-box {
+                max-height: 90vh;
+            }
+
+            .modal-img {
+                height: 180px;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -689,9 +767,9 @@
         <a href="#" class="logo">Grant</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="social-links">
@@ -717,14 +795,6 @@
                 Building intelligent systems at the intersection of computer vision, automation,
                 and physical deployment. Applying AI to solve real challenges and make the world more sustainable.
             </p>
-            <div class="hero-skills" aria-label="Core skills">
-                <span class="hero-skill-pill">Computer Vision</span>
-                <span class="hero-skill-pill">Remote Sensing &amp; Geospatial AI</span>
-                <span class="hero-skill-pill">UAS / Drone Systems</span>
-                <span class="hero-skill-pill">AI Strategy</span>
-                <span class="hero-skill-pill">Product Management</span>
-                <span class="hero-skill-pill">Business Development</span>
-            </div>
             <div>
                 <a href="#projects" class="btn">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Get In Touch</a>
@@ -741,14 +811,14 @@
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">Background & Education</p>
                 <p>
-                    I'm a multidisciplinary engineer and strategist focused on the intersection of AI,  
+                    I'm a multidisciplinary engineer and strategist focused on the intersection of AI,
                     product development, and real-world systems. My goal is to design and build solutions
                     that make the world a better and more sustainable place.
                 </p>
                 <p>
-                    I'm a graduate student at Carnegie Mellon studying AI Engineering. Before CMU, I spent 
+                    I'm a graduate student at Carnegie Mellon studying AI Engineering. Before CMU, I spent
                     four years at Deloitte Consulting working at the intersection of energy and sustainability
-                    strategy, where I led AI product development for wildfire prevention solutions and launched 
+                    strategy, where I led AI product development for wildfire prevention solutions and launched
                     a generative AI tool to 180,000+ users.
                 </p>
 
@@ -770,99 +840,6 @@
         </div>
     </section>
 
-    <!-- Work Experience Section -->
-    <section id="experience" class="work-experience">
-        <div class="work-experience-inner">
-        <h2 class="section-title">Work Experience</h2>
-        <p class="section-subtitle">Professional history</p>
-
-        <div class="work-accordion">
-
-            <!-- Hermes Vision -->
-            <div class="work-item open">
-                <div class="work-item-header">
-                    <div class="work-item-meta">
-                        <h3>Hermes Vision</h3>
-                        <span class="work-role-dates">Founder & CEO &nbsp;·&nbsp; Nov 2025 – Present</span>
-                    </div>
-                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </div>
-                <div class="work-item-body">
-                    <p>Building an AI-powered computer vision platform for precision vegetation management in the energy and utility sector. Selected for the CMU Robotics Factory Accelerate program, placed 2nd at the CMU McGinnis Venture Competition, and named a Top 50 Planet-First Innovation by the Sustainable Innovation Council.</p>
-                </div>
-            </div>
-
-            <!-- Deloitte -->
-            <div class="work-item">
-                <div class="work-item-header">
-                    <div class="work-item-meta">
-                        <h3>Deloitte Consulting | Strategy & Analytics</h3>
-                        <span class="work-role-dates">Strategy Analyst → Consultant → Senior Consultant &nbsp;·&nbsp; Jan 2021 – Jun 2025</span>
-                    </div>
-                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </div>
-                <div class="work-item-body">
-                    <p>Spent four years at Deloitte working across AI, energy, and sustainability strategy. Led the development of a wildfire risk AI/ML solution for a major California utility as product manager, rolled out a generative AI tool to 180,000+ users within a week of launch, and advanced Deloitte's Earth Observation practice by integrating drone imagery, LiDAR, and machine learning for 5+ energy and utility clients. Earlier work included building an ML pipeline corrosion risk model for 77k miles of gas pipelines and delivering Tableau-based emissions analytics to state leadership to shape clean energy roadmaps.</p>
-                </div>
-            </div>
-
-            <!-- Trey Deuce Designs -->
-            <div class="work-item">
-                <div class="work-item-header">
-                    <div class="work-item-meta">
-                        <h3>Trey Deuce Designs LLC</h3>
-                        <span class="work-role-dates">Founder &nbsp;·&nbsp; Jul 2020 – May 2022</span>
-                    </div>
-                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </div>
-                <div class="work-item-body">
-                    <p>Founded and operated a custom woodworking business during the pandemic, designing and handcrafting hardwood furniture and home goods for the consumer market. Managed all aspects of the business — product design, material sourcing, LLC incorporation, and online presence — as sole proprietor.</p>
-                </div>
-            </div>
-
-            <!-- Lockheed Martin -->
-            <div class="work-item">
-                <div class="work-item-header">
-                    <div class="work-item-meta">
-                        <h3>Lockheed Martin | Missiles and Fire Control</h3>
-                        <span class="work-role-dates">Systems Engineering Intern &nbsp;·&nbsp; May 2019 – Aug 2019</span>
-                    </div>
-                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </div>
-                <div class="work-item-body">
-                    <p>Collaborated on a multidisciplinary team to develop a new rocket artillery Fire Control System, leading requirements development and Integration & Test planning. Redeveloped a guided artillery missile's control fin actuation system model, ran Monte Carlo simulations, and performed optimization to select ideal control parameters across the flight envelope.</p>
-                </div>
-            </div>
-
-
-            <!-- ValvTechnologies -->
-            <div class="work-item">
-                <div class="work-item-header">
-                    <div class="work-item-meta">
-                        <h3>ValvTechnologies Inc.</h3>
-                        <span class="work-role-dates">Product Engineering Intern &nbsp;·&nbsp; May 2018 – Aug 2018</span>
-                    </div>
-                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </div>
-                <div class="work-item-body">
-                    <p>Led a five-person team to design a $350,000 offshore oil-and-gas valve, performing size and stress analyses and developing CAD models for fabrication. Developed a structured torque testing process to meet nuclear regulatory requirements and coordinated a LEAN manufacturing 5S event to improve machine shop efficiency.</p>
-                </div>
-            </div>
-
-        </div>
-        </div>
-    </section>
-
     <!-- Projects Section -->
     <section id="projects">
         <h2 class="section-title">Projects</h2>
@@ -874,23 +851,26 @@
                 <div class="project-content">
                     <h3>Autonomous Precision Vegetation Management</h3>
                     <p>
-                        Conventional invasive vegetation control relies on broadcast herbicide application, saturating entire fields regardless of where target species actually grow. This project set out to replace that indiscriminate approach with an autonomous computer vision system capable of detecting and precisely locating invasive species in the field.
+                        Conventional weed management relies on broadcast herbicide application, covering an entire fields regardless of where the weeds are actually growing. This project set out to replace that indiscriminate approach with an autonomous computer vision system capable of detecting and precisely locating invasive species in the field.
                     </p>
-                    <p>
-                        Built an end-to-end perception pipeline using YOLO and PyTorch that performs real-time species detection and classification from drone imagery in complex, multi-species terrain. A geospatial mapping layer fuses GPS metadata with each detection to produce georeferenced treatment maps, enabling downstream autonomous robotic platforms to apply herbicide only where target species are confirmed present.
-                    </p>
-                    <p>
-                        The system exceeded 85% detection accuracy across test conditions. Treatment maps generated from detections demonstrate a capability to reduce pesticide volume by up to 70% compared to broadcast application baselines.
-                    </p>
-                    <p>
-                        The prototype is advancing toward a field pilot, with the core detection-to-treatment-map pipeline validated. Precision application at this accuracy level offers a path to meaningfully lower chemical inputs across large-acreage land management — with direct implications for soil health, regulatory compliance, and operational cost.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">YOLO</span>
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">GPS/Geospatial</span>
+                    <div class="project-details">
+                        <p>
+                            Built an end-to-end perception pipeline using PyTorch that performs species detection and classification from drone imagery in complex, multi-species terrain. A geospatial mapping layer fuses GPS metadata with each detection to produce georeferenced treatment maps, enabling downstream autonomous robotic platforms to apply herbicide only where target species are confirmed present.
+                        </p>
+                        <p>
+                            The system exceeded 85% detection accuracy across test conditions. Treatment maps generated from detections demonstrate a capability to reduce pesticide volume by up to 70% compared to broadcast application baselines.
+                        </p>
+                        <p>
+                            The prototype is advancing toward a field pilot, with the core detection-to-treatment-map pipeline validated. Precision application at this accuracy level offers a path to meaningfully lower chemical inputs for land management. This simultaneously improves soil health and operational cost.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">YOLO</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">GPS/Geospatial</span>
+                        </div>
                     </div>
+                    <span class="project-read-more">Learn more →</span>
                 </div>
             </article>
 
@@ -899,25 +879,28 @@
                 <div class="project-content">
                     <h3>Edge AI Real-Time Scenic Recognition</h3>
                     <p>
-                        Wearable devices capture everything but remember nothing — users still manually curate which moments are worth keeping. This project aimed to automate scenic quality recognition on edge hardware, enabling wearables to independently identify and save visually compelling moments in real time.
+                        Manually taking pictures while hiking ruins immersion in nature. But hikers want the images to remember their hikes. This project aimed to automate scenic quality recognition on edge hardware, enabling wearables to independently identify and save visually compelling scenes of a hike in real time.
                     </p>
-                    <p>
-                        Benchmarked four model architectures — DINO, MobileNet, NIMA, and MaskFormer — across inference latency, power consumption, and classification accuracy to identify the optimal tradeoff profile for constrained edge deployment.
-                    </p>
-                    <p>
-                        The system correctly identified 10 out of 10 highest-quality images from a 300-image evaluation dataset. The project was awarded Best Overall Project at the 2026 CMU MechE Design Expo.
-                    </p>
-                    <p>
-                        Results indicate that lightweight architectures can achieve high scenic classification accuracy at inference speeds viable for wearable deployment, with NIMA's aesthetic scoring approach offering the strongest accuracy-to-compute tradeoff.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Edge AI</span>
-                        <span class="tag">DINO</span>
-                        <span class="tag">MobileNet</span>
-                        <span class="tag">NIMA</span>
-                        <span class="tag">MaskFormer</span>
-                        <span class="tag">Wearables</span>
+                    <div class="project-details">
+                        <p>
+                            Benchmarked four model architectures — DINO, MobileNet, NIMA, and MaskFormer — across inference latency, power consumption, and classification accuracy to identify the optimal tradeoff profile for constrained edge deployment.
+                        </p>
+                        <p>
+                            The system correctly identified 10 out of 10 highest-quality images from a 300-image evaluation dataset. The project was awarded Best Overall Project at the 2026 CMU MechE Design Expo.
+                        </p>
+                        <p>
+                            Results indicate that lightweight architectures can achieve high scenic classification accuracy at inference speeds viable for wearable deployment.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Edge AI</span>
+                            <span class="tag">DINO</span>
+                            <span class="tag">MobileNet</span>
+                            <span class="tag">NIMA</span>
+                            <span class="tag">MaskFormer</span>
+                            <span class="tag">Wearables</span>
+                        </div>
                     </div>
+                    <span class="project-read-more">Learn more →</span>
                 </div>
             </article>
 
@@ -928,21 +911,24 @@
                     <p>
                         Vegetation encroachment near high-voltage lines is the single largest cause of utility outages in the US. A major California utility operating more than 50,000 miles of transmission and distribution infrastructure needed a scalable alternative to on-foot inspection — which is slow, expensive, and provides infrequent coverage across a network that size.
                     </p>
-                    <p>
-                        Serving as product strategist, led the operationalization of an AI inspection platform — translating field crew requirements into system capabilities and ensuring the product was deployable in real operational conditions. The platform fuses drone imagery, LiDAR point clouds, and machine learning to detect at-risk vegetation, integrating GIS data layers, field service software, and AI pipelines into a unified reporting and work order system.
-                    </p>
-                    <p>
-                        The system achieved vegetation detection accuracy to within 6 inches in both absolute and relative terms, enabling lower cost-per-mile inspections and more frequent corridor coverage than on-foot baseline methods allowed.
-                    </p>
-                    <p>
-                        At 50,000+ miles of infrastructure, the gap between on-foot and aerial AI inspection compounds quickly — this platform demonstrated that perception-based remote sensing can close that gap operationally, not just technically.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">Drone / UAS</span>
-                        <span class="tag">LiDAR</span>
-                        <span class="tag">GIS / Geospatial</span>
+                    <div class="project-details">
+                        <p>
+                            Serving as product strategist, led the operationalization of an AI inspection platform. I translated field crew requirements into system capabilities and ensured the product was deployable in real operational conditions. The platform fuses drone imagery, LiDAR point clouds, and machine learning to detect at-risk vegetation, integrating GIS data layers, field service software, and AI pipelines into a unified reporting and work order system.
+                        </p>
+                        <p>
+                            The system achieved vegetation detection accuracy to within 6 inches in both absolute and relative terms, enabling lower cost-per-mile inspections and more frequent corridor coverage than on-foot baseline methods allowed.
+                        </p>
+                        <p>
+                            At 50,000+ miles of infrastructure, the gap between on-foot and aerial AI inspection compounds quickly — this platform demonstrated that perception-based remote sensing can close that gap operationally, not just technically.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Drone / UAS</span>
+                            <span class="tag">LiDAR</span>
+                            <span class="tag">GIS / Geospatial</span>
+                        </div>
                     </div>
+                    <span class="project-read-more">Learn more →</span>
                 </div>
             </article>
 
@@ -951,23 +937,26 @@
                 <div class="project-content">
                     <h3>US Power Plants & Facility GHG Emissions</h3>
                     <p>
-                        State energy policymakers face a core visibility problem: the data needed to plan decarbonization exists across multiple federal datasets but is never integrated in a form that supports decision-making. This project set out to bridge that gap by building an interactive, unified view of US power infrastructure and emissions through 2050.
+                        State energy policymakers face a visibility problem: the data needed to plan decarbonization exists across multiple federal datasets but is never integrated in a form that supports decision-making at the state and county level. This project set out to bridge that gap by building an interactive, unified view of US power infrastructure and emissions through 2050.
                     </p>
-                    <p>
-                        Constructed interactive Tableau dashboards drawing from EIA capacity data, EPA FLIGHT facility emissions records, and EPA GHG estimates — covering all greenhouse gases and projected trajectories through 2050. Visualizations map US power plants by energy source and installed capacity alongside facility-level GHG inventories, enabling cross-sector comparison at national and regional scales.
-                    </p>
-                    <p>
-                        A refined version of the analysis was delivered to a state energy office and used directly as input for decarbonization roadmap development and clean energy policy planning.
-                    </p>
-                    <p>
-                        Integrating generation capacity with emissions projections in a single visual layer made it possible for non-technical policymakers to identify high-emission facilities and model clean energy transition pathways — a workflow that historically required separate analyst handoffs.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Tableau</span>
-                        <span class="tag">Geospatial Analytics</span>
-                        <span class="tag">Energy Policy</span>
-                        <span class="tag">GHG / Emissions</span>
+                    <div class="project-details">
+                        <p>
+                            Constructed interactive Tableau dashboards drawing from EIA capacity data, EPA FLIGHT facility emissions records, and EPA GHG estimates — covering all greenhouse gases and projected trajectories through 2050. Visualizations map US power plants by energy source and installed capacity alongside facility-level GHG inventories, enabling cross-sector comparison at national and regional scales.
+                        </p>
+                        <p>
+                            A refined version of the analysis was delivered to a state energy office and used directly as input for decarbonization roadmap development and clean energy policy planning.
+                        </p>
+                        <p>
+                            Integrating generation capacity with emissions projections in a single visual layer made it possible for non-technical policymakers to identify high-emission facilities and model clean energy transition pathways. This exploration helped policy makers better understand policy tradeoffs.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Geospatial Analytics</span>
+                            <span class="tag">Energy Policy</span>
+                            <span class="tag">GHG / Emissions</span>
+                        </div>
                     </div>
+                    <span class="project-read-more">Learn more →</span>
                 </div>
             </article>
 
@@ -976,23 +965,26 @@
                 <div class="project-content">
                     <h3>Inline Solid-Liquid Mixing Device</h3>
                     <p>
-                        Large-scale chemical production requires precise, continuous mixing of solids and liquids — a process that batch methods handle inefficiently, creating throughput bottlenecks at industrial scale. Baker Hughes commissioned this two-semester capstone project at Rice University to design and prototype an inline device capable of continuously combining one solid and two liquids in a single pass.
+                        Large-scale chemical production requires precise, continuous mixing of solids and liquids — a process that batch methods handle inefficiently at industrial scale. Baker Hughes commissioned this two-semester capstone project at Rice University to design and prototype an inline device capable of continuously combining one solid and two liquids in a single pass.
                     </p>
-                    <p>
-                        Working as part of a 4-person team, designed a system integrating an auger-fed solid hopper, swirl-basin mixing chamber, dual pumps, and real-time sensors monitoring salinity, flow rate, and fluid density. A Raspberry Pi with touchscreen interface provided operator control and live QC reporting throughout the mixing process.
-                    </p>
-                    <p>
-                        The prototype achieved uniform mixing under test conditions, validating the inline approach for continuous solid-liquid combination. Full production-scale testing was curtailed by Covid-19 before the project could be completed.
-                    </p>
-                    <p>
-                        The sensor-integrated control architecture demonstrated that real-time quality monitoring is feasible within a compact inline form factor — a design pattern directly applicable to automated industrial process equipment.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">CAD / SolidWorks</span>
-                        <span class="tag">Electrical Design</span>
-                        <span class="tag">Sensors & Control</span>
-                        <span class="tag">Raspberry Pi</span>
+                    <div class="project-details">
+                        <p>
+                            Working as part of a 4-person team, designed a system integrating an auger-fed solid hopper, swirl-basin mixing chamber, dual pumps, and real-time sensors monitoring salinity, flow rate, and fluid density. An Arduino controller provided operator control and live QC reporting throughout the mixing process.
+                        </p>
+                        <p>
+                            The prototype achieved uniform mixing under initial test conditions, validating the inline approach for continuous solid-liquid combination. Full testing was cut short by Covid before the project could be completed.
+                        </p>
+                        <p>
+                            The sensor-integrated control architecture demonstrated that real-time quality monitoring is feasible within a compact inline form factor — a design pattern directly applicable to automated industrial process equipment.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">CAD / SolidWorks</span>
+                            <span class="tag">Electrical Design</span>
+                            <span class="tag">Sensors & Control</span>
+                            <span class="tag">Raspberry Pi</span>
+                        </div>
                     </div>
+                    <span class="project-read-more">Learn more →</span>
                 </div>
             </article>
 
@@ -1001,23 +993,23 @@
                 <div class="project-content">
                     <h3>Mechanical Design: 80:1 Gearbox Assembly</h3>
                     <p>
-                        High-torque gearboxes require simultaneous optimization across geometry, material selection, and fatigue life — constraints that pull in competing directions and leave little margin for error. This undergraduate mechanical design project challenged a 3-person team to design an 80:1 speed-reduction gearbox delivering 12,000 lb-in of output torque with input and output shafts oriented at 90°.
+                        High-torque gearboxes require simultaneous optimization across geometry, material selection, and fatigue life. All of these constraints  pull in competing directions and leave little margin for error. This undergraduate mechanical design project challenged a 3-person team to design an 80:1 speed-reduction gearbox delivering 12,000 lb-in of output torque with input and output shafts oriented at 90°.
                     </p>
-                    <p>
-                        Optimized a geartrain for minimum volume using four spur gear pairs and one bevel gear set distributed across six shafts. Performed full analytical fatigue and stress analyses in SolidWorks to select shaft dimensions and bearings at each stage, working entirely in CAD without physical fabrication.
-                    </p>
-                    <p>
-                        The final design met all specified requirements: a 2.1:1 safety factor against first-cycle failure (minimum 2:1) and 1.55:1 against infinite fatigue life (minimum 1.5:1), confirming structural adequacy within the target volume envelope.
-                    </p>
-                    <p>
-                        Systematic analytical design proved sufficient to satisfy tight multi-constraint specs without physical iteration — a workflow directly applicable to precision power transmission in robotics and industrial actuator systems.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">CAD / SolidWorks</span>
-                        <span class="tag">Fatigue Analysis</span>
-                        <span class="tag">Gear Train Design</span>
-                        <span class="tag">FEA</span>
+                    <div class="project-details">
+                        <p>
+                            Optimized a geartrain package. Performed full analytical fatigue and stress analyses in SolidWorks to select shaft dimensions and bearings at each stage, working entirely in CAD without physical fabrication.
+                        </p>
+                        <p>
+                            The final design met all specified requirements: a 2.1:1 safety factor against first-cycle failure (minimum 2:1) and 1.55:1 against infinite fatigue life (minimum 1.5:1), confirming structural adequacy within the target volume envelope.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">CAD / SolidWorks</span>
+                            <span class="tag">Fatigue Analysis</span>
+                            <span class="tag">Gear Train Design</span>
+                            <span class="tag">FEA</span>
+                        </div>
                     </div>
+                    <span class="project-read-more">Learn more →</span>
                 </div>
             </article>
         </div>
@@ -1050,12 +1042,104 @@
         </div>
     </section>
 
+    <!-- Work Experience Section -->
+    <section id="experience" class="work-experience">
+        <div class="work-experience-inner">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">Professional history</p>
+
+        <div class="work-accordion">
+
+            <!-- Hermes Vision -->
+            <div class="work-item open">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>Hermes Vision</h3>
+                        <span class="work-role-dates">Founder & CEO &nbsp;·&nbsp; Nov 2025 – Present</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Building an AI-powered computer vision platform for precision vegetation management in the energy and utility sector. Selected for the Alphalab Robotics Factory Accelerate program, placed 2nd at the CMU McGinnis Venture Competition, and named a Top 50 Planet-First Innovation by the Sustainable Innovation Council.</p>
+                </div>
+            </div>
+
+            <!-- Deloitte -->
+            <div class="work-item">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>Deloitte Consulting | Strategy & Analytics</h3>
+                        <span class="work-role-dates">Strategy Analyst → Consultant → Senior Consultant &nbsp;·&nbsp; Jan 2021 – Jun 2025</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Spent four years at Deloitte working across AI, energy, and sustainability strategy. Led the development of a wildfire risk AI/ML solution for a major California utility as product strategist, rolled out a generative AI tool to 180,000+ users within a week of launch, and advanced Deloitte's Earth Observation practice by integrating drone imagery, LiDAR, and machine learning for energy and utility clients. Earlier work included building an ML pipeline corrosion risk model for 77k miles of gas pipelines and delivering Tableau-based emissions analytics to state leadership to shape clean energy roadmaps.</p>
+                </div>
+            </div>
+
+            <!-- Trey Deuce Designs -->
+            <div class="work-item">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>Trey Deuce Designs LLC</h3>
+                        <span class="work-role-dates">Founder &nbsp;·&nbsp; Jul 2020 – May 2022</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Founded and operated a custom woodworking business, designing and handcrafting hardwood furniture and home goods for the consumer market. Managed all aspects of the business — product design, material sourcing, LLC incorporation, and online presence — as sole proprietor.</p>
+                </div>
+            </div>
+
+            <!-- Lockheed Martin -->
+            <div class="work-item">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>Lockheed Martin | Missiles and Fire Control</h3>
+                        <span class="work-role-dates">Systems Engineering Intern &nbsp;·&nbsp; May 2019 – Aug 2019</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Collaborated on a multidisciplinary team to develop a new rocket artillery Fire Control System, leading requirements development and Integration & Test planning. Redeveloped a guided artillery missile's control fin actuation system model, ran Monte Carlo simulations, and performed optimization to select ideal control parameters across the flight envelope.</p>
+                </div>
+            </div>
+
+            <!-- ValvTechnologies -->
+            <div class="work-item">
+                <div class="work-item-header">
+                    <div class="work-item-meta">
+                        <h3>ValvTechnologies Inc.</h3>
+                        <span class="work-role-dates">Product Engineering Intern &nbsp;·&nbsp; May 2018 – Aug 2018</span>
+                    </div>
+                    <svg class="work-item-toggle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="work-item-body">
+                    <p>Led a five-person team to design a $350,000 offshore oil-and-gas valve, performing size and stress analyses and developing CAD models for fabrication. Developed a structured torque testing process to meet nuclear regulatory requirements and coordinated a LEAN manufacturing 5S event to improve machine shop efficiency.</p>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="contact-content">
             <h2 class="section-title">Get In Touch</h2>
             <p>
-                Currently bridging the gap between AI research and product reality at Carnegie Mellon. 
+                Currently bridging the gap between AI research and product reality at Carnegie Mellon.
                 If you're building something that needs to move, think, or scale—let's talk.
             </p>
             <a href="mailto:grantmwilkinson@gmail.com" class="contact-email">grantmwilkinson@gmail.com</a>
@@ -1083,7 +1167,19 @@
         <p>&copy; 2026 Grant Wilkinson</p>
     </footer>
 
-    <!-- Typing Animation Script -->
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title-text">
+        <div class="modal-box">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <img class="modal-img" src="" alt="">
+            <div class="modal-body">
+                <h3 class="modal-title" id="modal-title-text"></h3>
+                <div class="modal-text"></div>
+                <div class="modal-tags"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
         const titles = ['Machine Learning Engineer', 'Computer Vision Engineer', 'Product Builder', 'Strategist', 'Founder', 'Robotics Engineer', 'Problem Solver'];
         let titleIndex = 0;
@@ -1105,12 +1201,12 @@
             let typeSpeed = isDeleting ? 30 : 70;
 
             if (!isDeleting && charIndex === currentTitle.length) {
-                typeSpeed = 1500; // Pause at end
+                typeSpeed = 1500;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 titleIndex = (titleIndex + 1) % titles.length;
-                typeSpeed = 300; // Pause before next word
+                typeSpeed = 300;
             }
 
             setTimeout(type, typeSpeed);
@@ -1128,6 +1224,51 @@
                 header.parentElement.classList.toggle('open');
             });
         });
+
+        // Project modal
+        const modal = document.getElementById('project-modal');
+        const modalImg = modal.querySelector('.modal-img');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalText = modal.querySelector('.modal-text');
+        const modalTags = modal.querySelector('.modal-tags');
+
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const img = card.querySelector('.project-image img');
+                const title = card.querySelector('h3').textContent;
+                const allParas = card.querySelectorAll('.project-content p');
+                const tags = card.querySelector('.project-tags');
+
+                modalImg.src = img ? img.src : '';
+                modalImg.alt = img ? img.alt : '';
+                modalTitle.textContent = title;
+
+                modalText.innerHTML = '';
+                allParas.forEach(p => {
+                    modalText.appendChild(p.cloneNode(true));
+                });
+
+                modalTags.innerHTML = tags ? tags.innerHTML : '';
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        modal.addEventListener('click', e => {
+            if (e.target === modal) closeModal();
+        });
+
+        modal.querySelector('.modal-close').addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     </script>
 </body>
 </html>
